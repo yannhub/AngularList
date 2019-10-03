@@ -1,0 +1,42 @@
+.container .users-viewport {
+  height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+
+  .cdk-div-scroll-content-wrapper {
+    width: 100%;
+  }
+
+  li {
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    background: whitesmoke;
+    box-shadow: 2px 2px 3px rgba($color: #888888, $alpha: 0.2);
+    display: flex;
+    flex-direction: row;
+
+    div {
+      flex: 1;
+      min-width: 0;
+      h2 {
+        font-size: 1.2em;
+        // overflow: hidden;
+        // white-space: nowrap;
+        // text-overflow: ellipsis;
+      }
+    }
+
+    img.user-avatar {
+      height: 100px;
+      width: 100px;
+      margin-right: 10px;
+    }
+  }
+}
