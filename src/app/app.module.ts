@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserTableComponent } from './components/user-table/user-table.component';
 import { MaterialDesignModule } from './material-design/material-design.module';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [AppComponent, UserListComponent, UserTableComponent],
@@ -16,7 +17,8 @@ import { MaterialDesignModule } from './material-design/material-design.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     ScrollingModule,
-    MaterialDesignModule
+    MaterialDesignModule,
+    NgxDatatableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

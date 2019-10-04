@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
-import * as faker from 'faker/locale/fr';
+import * as faker from 'faker';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,12 @@ export class UserService {
       .map(_ => ({
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
-        city: faker.address.city(),
+        age: faker.random.number({ min: 16, max: 105 }),
+        jobTitle: faker.name.jobTitle(),
+        address: {
+          city: faker.address.city(),
+          state: faker.address.state()
+        },
         avatar: faker.image.avatar()
       }));
   }

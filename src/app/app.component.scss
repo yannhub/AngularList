@@ -1,8 +1,6 @@
-.app-content {
-  height: 100vh;
-}
+.app-wrapper {
+  height: 100%;
 
-.app-container {
   .sidenav {
     width: 200px;
     .sidenav-btn {
@@ -11,5 +9,9 @@
         background-color: rgba(189, 189, 189, 0.6);
       }
     }
+  }
+
+  .app-content {
+    height: 100%;
   }
 }

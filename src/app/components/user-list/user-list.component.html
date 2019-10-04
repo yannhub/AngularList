@@ -1,11 +1,11 @@
-<div class="container">
-  <cdk-virtual-scroll-viewport itemSize="130" class="users-viewport">
-    <li *cdkVirtualFor="let u of users">
+<cdk-virtual-scroll-viewport itemSize="130" class="users-viewport">
+  <li *cdkVirtualFor="let u of users">
+    <div class="crop">
       <img class="user-avatar animated fadeIn" src="{{ u.avatar }}" />
-      <div>
-        <h2>{{ u.firstName }} {{ u.lastName }}</h2>
-        <p>{{ u.city }}</p>
-      </div>
-    </li>
-  </cdk-virtual-scroll-viewport>
-</div>
+    </div>
+    <div>
+      <h2>{{ u.firstName }} {{ u.lastName }}</h2>
+      <p>{{ u.jobTitle }}</p>
+    </div>
+  </li>
+</cdk-virtual-scroll-viewport>
