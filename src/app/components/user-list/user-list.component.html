@@ -1,5 +1,5 @@
 <cdk-virtual-scroll-viewport itemSize="130" class="users-viewport">
-  <li *cdkVirtualFor="let u of users">
+  <li *cdkVirtualFor="let u of users$ | async">
     <div class="crop">
       <img class="user-avatar animated fadeIn" src="{{ u.avatar }}" />
     </div>

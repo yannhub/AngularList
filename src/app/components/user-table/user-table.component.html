@@ -1,28 +1,32 @@
-<div id="user-table-wrapper">
-  <mat-form-field id="user-filter">
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" />
-  </mat-form-field>
-  <ngx-datatable
-    id="user-table"
-    class="material"
-    [columnMode]="ColumnMode.force"
-    [headerHeight]="50"
-    [footerHeight]="50"
-    [rowHeight]="100"
-    [scrollbarV]="true"
-    [scrollbarH]="true"
-    [rows]="users"
-  >
-    <ngx-datatable-column prop="avatar" [width]="100">
-      <ng-template let-value="value" ngx-datatable-cell-template>
-        <img class="user-avatar animated fadeIn" src="{{ value }}" />
-      </ng-template>
-    </ngx-datatable-column>
-    <ngx-datatable-column prop="lastName" [width]="100"> </ngx-datatable-column>
-    <ngx-datatable-column prop="firstName" [width]="100"> </ngx-datatable-column>
-    <ngx-datatable-column prop="age" [width]="50"> </ngx-datatable-column>
-    <ngx-datatable-column prop="jobTitle"> </ngx-datatable-column>
-    <ngx-datatable-column name="City" prop="address.city"> </ngx-datatable-column>
-    <ngx-datatable-column name="State" prop="address.state"> </ngx-datatable-column>
-  </ngx-datatable>
-</div>
+<ngx-datatable
+  id="user-table"
+  class="material"
+  #table
+  [columnMode]="ColumnMode.force"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="100"
+  [scrollbarV]="true"
+  [scrollbarH]="true"
+  [rows]="users$ | async"
+>
+  <ngx-datatable-column prop="avatar" [maxWidth]="100" [sortable]="false">
+    <ng-template let-value="value" ngx-datatable-cell-template>
+      <img class="user-avatar animated fadeIn" src="{{ value }}" />
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column prop="lastName" [maxWidth]="100"> </ngx-datatable-column>
+  <ngx-datatable-column prop="firstName" [maxWidth]="100"> </ngx-datatable-column>
+  <ngx-datatable-column prop="age" [maxWidth]="50"> </ngx-datatable-column>
+  <ngx-datatable-column prop="jobTitle">
+    <ng-template let-value="value" ngx-datatable-cell-template>
+      <span class="multiline">{{ value }}</span>
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="City" prop="address.city">
+    <ng-template let-value="value" ngx-datatable-cell-template>
+      <span class="multiline">{{ value }}</span>
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="State" prop="address.state" [maxWidth]="150"> </ngx-datatable-column>
+</ngx-datatable>
