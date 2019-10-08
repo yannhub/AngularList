@@ -1,10 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import * as Hammer from 'hammerjs';
-import { Observable, Subject } from 'rxjs';
-import { User } from './models/user';
-import { UserService } from './services/user.service';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
