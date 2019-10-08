@@ -38,7 +38,6 @@ export class UserService {
       )
     );
     o.subscribe(users => {
-      console.log(term);
       this.users.next(users);
     });
     return o;

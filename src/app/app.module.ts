@@ -14,6 +14,8 @@ import { UserTableComponent } from './components/user-table/user-table.component
 import { MaterialDesignModule } from './material-design/material-design.module';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { UserSearchComponent } from './components/user-search/user-search.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, UserListComponent, UserTableComponent, UserSearchComponent],
@@ -29,7 +31,8 @@ import { UserSearchComponent } from './components/user-search/user-search.compon
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       delay: 0,
       dataEncapsulation: false
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

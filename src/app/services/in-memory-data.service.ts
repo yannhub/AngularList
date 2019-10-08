@@ -8,7 +8,7 @@ import * as faker from 'faker';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const users = Array(100)
+    const users = Array(10000)
       .fill(1)
       .map(_ => ({
         id: faker.random.uuid(),
