@@ -18,22 +18,8 @@ export class AppComponent {
     hammertime.on('panleft', ev => {
       this.sidenav.close();
     });
-
-    const swipe = new Hammer(elementRef.nativeElement, {});
-    function getStartPosition(e) {
-      const delta_x = e.deltaX;
-      const delta_y = e.deltaY;
-      const final_x = e.srcEvent.pageX || e.srcEvent.screenX || 0;
-      const final_y = e.srcEvent.pageY || e.srcEvent.screenY || 0;
-
-      return {
-        x: final_x - delta_x,
-        y: final_y - delta_y
-      };
-    }
-    swipe.on('panright', e => {
-      e.preventDefault();
-      const { x } = getStartPosition(e);
+    hammertime.on('panright', e => {
+      const x = e.center.x;
       if (x >= 0 && x <= 50) {
         this.sidenav.open();
       }
